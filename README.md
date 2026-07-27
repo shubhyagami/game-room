@@ -50,31 +50,64 @@ Our mission: make `game-room` the friendliest, fastest, and most chaotic-good ga
 - [x] Real‑time voice chat via WebRTC *(shipped 2026‑07‑26)*
 - [x] Retro Arcade lobby theme *(shipped 2026‑07‑26)*
 - [ ] **Persistent player profiles** – carry your win streak, avatar, and stats across rooms
-- [ ] **Tournament mode** – bracket logic, automated scheduling, and spectator overlays
-- [ ] **Replay system v1** – record the last 30 seconds of any match for those "did that really just happen?!" moments
+- [ ] **Tournament mode** – bracket-style competitions with auto-seeding and crowd cheering
+- [ ] **Custom game plugins** – drop in your own ruleset via a sandboxed API
+- [ ] **Mobile push notifications** – ping friends when their turn is up or a room opens
 
-### 🚀 Next Stops – Q3 2026
+### 🔮 Variant Futures – On the Horizon
 
-- [ ] **Mobile companion app** (iOS + Android) for push notifications and quick rejoins
-- [ ] **Custom game plugins** – community-built card decks, trivia packs, and mini-games via a JSON manifest
-- [ ] **AI Game Master** – optional NPC players for solo queue practice
-- [ ] **Localization pack v1** – Spanish, French, Japanese, Portuguese (pt-BR), Hindi
-- [ ] **Spectator reactions** – emoji storms, polls, and live betting on outcomes (play money)
-
-### 🌌 Long-Term Vision – The Multiverse Timeline
-
-- [ ] Cross-platform federation – play with friends on Discord, Steam, and web without accounts
-- [ ] VR room lobbies (Meta Quest + VisionOS support)
-- [ ] Community marketplace for themes, sound packs, and game modes
-- [ ] Self-hosted option: `docker run game-room` for your own private game server
-- [ ] **Endgame**: a fully on-chain tournament mode with verifiable randomness *(experimental)*
-
-### 🤝 How to Influence the Timeline
-
-Have a feature that should branch here? Open an issue with the `[timeline-pruning]` tag or hop into our Discussions. Popular requests get promoted to the official roadmap after a community vote — **democracy wins lobbies**.
-
-> 💡 *Tip from the TVA archives: features with a working prototype PR get fast-tracked. Show, don't tell.*
+- [ ] AI-powered game master for solo play
+- [ ] Cross-room "cross-overs" – merge two lobbies mid-match
+- [ ] VR lobby support (WebXR)
+- [ ] Replay system with cinematic camera modes
 
 ---
 
-*Last synchronized with the Sacred Timeline: 2026‑07‑27*
+## ⏳ Version History
+
+> *Every timeline leaves a footprint. Here's ours.*
+
+### `v0.7.0` – "The Arcade Awakens" *(2026‑07‑26)*
+- ✨ Real-time voice chat via WebRTC (opt-in)
+- 🎨 Retro Arcade lobby theme – neon glow, CRT scanlines, cabinet vibes
+- 🐛 Fixed: player scores no longer reset on reconnection
+- ⚡ Matchmaking latency improved ~18% on global servers
+
+### `v0.6.2` – "The Ping Whisperer" *(2026‑06‑14)*
+- 🐛 Fixed: lobby desync when host migrated mid-game
+- 🛠 Refactored WebSocket layer for cleaner reconnects
+- 📜 Added: detailed player activity logs (opt-in)
+
+### `v0.6.0` – "Spectator's Delight" *(2026‑05‑02)*
+- 👀 Spectator mode – watch and chat without joining
+- 🔗 Shareable invite links via `/party`
+- 🎵 Background music now persists across lobby navigation
+- 🐛 Fixed: occasional "ghost player" slots after timeout
+
+### `v0.5.0` – "Eight Is Enough" *(2026‑03‑19)*
+- 🎮 Support for up to 8 concurrent players per room
+- 🏆 Live score updates with animation flourishes
+- 🌐 Expanded global server coverage (12 new PoPs)
+
+### `v0.4.0` – "Turn-Based Takes Over" *(2026‑02‑08)*
+- ♻️ Turn-based logic engine (trivia, card games, strategy)
+- 💬 In-room chat with emoji reactions
+- 🔒 Room passwords and join approval flow
+
+### `v0.3.0` – "Peer Pressure" *(2026‑01‑15)*
+- 🤝 WebRTC fallback for peer-to-peer play
+- 📉 Reduced server load by ~40% in low-latency regions
+
+### `v0.2.0` – "Lobby Logic" *(2025‑12‑01)*
+- 🏠 Lobby creation, join, leave, kick
+- 🎲 First playable game shipped: Tic-Tac-Toe Royale
+
+### `v0.1.0` – "First Light" *(2025‑10‑17)*
+- 🚀 Initial release
+- 🧪 Proof-of-concept multiplayer room
+- ☕ One very tired developer and a lot of coffee
+
+---
+
+> *“We don't preserve the timeline. We preserve the game night.”*  
+> — The game-room TVA Cell
