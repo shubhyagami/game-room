@@ -63,6 +63,27 @@ Our mission: make `game-room` the friendliest, fastest, and most chaotic-good ga
 
 ---
 
+## 🛠 Technical Stack & Architecture
+
+![Node.js](https://img.shields.io/badge/Node.js-18.x-339933?style=flat&logo=node.js&logoColor=white)
+![React](https://img.shields.io/badge/React-18-61DAFB?style=flat&logo=react&logoColor=white)
+![Socket.IO](https://img.shields.io/badge/Socket.IO-4.x-010101?style=flat&logo=socket.io&logoColor=white)
+![WebRTC](https://img.shields.io/badge/WebRTC-supported-333333?style=flat&logo=webrtc&logoColor=white)
+![License](https://img.shields.io/badge/License-MIT-blue.svg)
+
+- **Frontend**: React 18 with Vite, Tailwind CSS for responsive UI, Three.js for lobby themes.
+- **Backend**: Node.js with Express, Socket.IO for real-time communication, WebRTC for peer-to-peer voice/video.
+- **Database**: PostgreSQL for persistent player profiles and game state (coming in v0.8).
+- **Deployment**: Dockerized microservices on Kubernetes, with CDN for static assets.
+
+## 🌍 Community & Support
+
+- **Discord**: [Join our server](https://discord.gg/gameroom) for live chat, support, and game nights.
+- **GitHub Issues**: Report bugs or request features.
+- **Twitter**: Follow [@shubhyagami](https://twitter.com/shubhyagami) for updates.
+
+---
+
 ## ⏳ Version History
 
 > *Every timeline leaves a footprint. Here's ours.*
@@ -76,38 +97,4 @@ Our mission: make `game-room` the friendliest, fastest, and most chaotic-good ga
 ### `v0.6.2` – "The Ping Whisperer" *(2026‑06‑14)*
 - 🐛 Fixed: lobby desync when host migrated mid-game
 - 🛠 Refactored WebSocket layer for cleaner reconnects
-- 📜 Added: detailed player activity logs (opt-in)
-
-### `v0.6.0` – "Spectator's Delight" *(2026‑05‑02)*
-- 👀 Spectator mode – watch and chat without joining
-- 🔗 Shareable invite links via `/party`
-- 🎵 Background music now persists across lobby navigation
-- 🐛 Fixed: occasional "ghost player" slots after timeout
-
-### `v0.5.0` – "Eight Is Enough" *(2026‑03‑19)*
-- 🎮 Support for up to 8 concurrent players per room
-- 🏆 Live score updates with animation flourishes
-- 🌐 Expanded global server coverage (12 new PoPs)
-
-### `v0.4.0` – "Turn-Based Takes Over" *(2026‑02‑08)*
-- ♻️ Turn-based logic engine (trivia, card games, strategy)
-- 💬 In-room chat with emoji reactions
-- 🔒 Room passwords and join approval flow
-
-### `v0.3.0` – "Peer Pressure" *(2026‑01‑15)*
-- 🤝 WebRTC fallback for peer-to-peer play
-- 📉 Reduced server load by ~40% in low-latency regions
-
-### `v0.2.0` – "Lobby Logic" *(2025‑12‑01)*
-- 🏠 Lobby creation, join, leave, kick
-- 🎲 First playable game shipped: Tic-Tac-Toe Royale
-
-### `v0.1.0` – "First Light" *(2025‑10‑17)*
-- 🚀 Initial release
-- 🧪 Proof-of-concept multiplayer room
-- ☕ One very tired developer and a lot of coffee
-
----
-
-> *“We don't preserve the timeline. We preserve the game night.”*  
-> — The game-room TVA Cell
+- 📜 Added: detail
