@@ -50,51 +50,49 @@ Our mission: make `game-room` the friendliest, fastest, and most chaotic-good ga
 - [x] Real‑time voice chat via WebRTC *(shipped 2026‑07‑26)*
 - [x] Retro Arcade lobby theme *(shipped 2026‑07‑26)*
 - [ ] **Persistent player profiles** – carry your win streak, avatar, and stats across rooms
-- [ ] **Tournament mode** – bracket-style competitions with auto-seeding and crowd cheering
-- [ ] **Custom game plugins** – drop in your own ruleset via a sandboxed API
-- [ ] **Mobile push notifications** – ping friends when their turn is up or a room opens
+- [ ] **Tournament
 
-### 🔮 Variant Futures – On the Horizon
+## 🕰️ Contributing – How to Branch the Timeline
 
-- [ ] AI-powered game master for solo play
-- [ ] Cross-room "cross-overs" – merge two lobbies mid-match
-- [ ] VR lobby support (WebXR)
-- [ ] Replay system with cinematic camera modes
+> *“Every pull request is a Nexus Event. Handle with care.”*  
+> — TVA Handbook, Chapter 7
 
----
+Welcome, temporal agent! You’ve been selected to help us prune paradoxes and weave a better multiverse of multiplayer gaming. Before you start splicing timelines, read the following **Time Variance Authority Contribution Guidelines**.
 
-## 🛠 Technical Stack & Architecture
+### 📜 Pruning Protocols (aka Code of Conduct)
 
-![Node.js](https://img.shields.io/badge/Node.js-18.x-339933?style=flat&logo=node.js&logoColor=white)
-![React](https://img.shields.io/badge/React-18-61DAFB?style=flat&logo=react&logoColor=white)
-![Socket.IO](https://img.shields.io/badge/Socket.IO-4.x-010101?style=flat&logo=socket.io&logoColor=white)
-![WebRTC](https://img.shields.io/badge/WebRTC-supported-333333?style=flat&logo=webrtc&logoColor=white)
-![License](https://img.shields.io/badge/License-MIT-blue.svg)
+- **Respect the Sacred Timeline** – All contributions must follow the existing architecture. No branching off into spaghetti code.
+- **No Alioth Zones** – Keep your changes clean, documented, and free of uncaught exceptions. We don’t want to reset the entire timeline.
+- **Minutemen Review** – Every PR must be approved by at least one other agent before merging. Use the `review:request` label to summon a Variant Inspector.
 
-- **Frontend**: React 18 with Vite, Tailwind CSS for responsive UI, Three.js for lobby themes.
-- **Backend**: Node.js with Express, Socket.IO for real-time communication, WebRTC for peer-to-peer voice/video.
-- **Database**: PostgreSQL for persistent player profiles and game state (coming in v0.8).
-- **Deployment**: Dockerized microservices on Kubernetes, with CDN for static assets.
+### 🧬 Branching Your Timeline
 
-## 🌍 Community & Support
+1. **Fork the repository** – This creates your own pocket dimension.
+2. **Create a feature branch** – Name it after the Temporal Variant you’re fixing (e.g., `fix/score-reset`, `feat/spectator-mode`).
+3. **Commit with TVA timestamps** – Use conventional commits, e.g.:  
+   `feat(lobby): add CRT scanline toggle for Retro Arcade theme`  
+   `fix(matchmaking): prune lag spike at 0x1A3F (2026-07-31)`
+4. **Submit a Pull Request** – Label it `nexus-event` and describe what timeline you’re altering.
 
-- **Discord**: [Join our server](https://discord.gg/gameroom) for live chat, support, and game nights.
-- **GitHub Issues**: Report bugs or request features.
-- **Twitter**: Follow [@shubhyagami](https://twitter.com/shubhyagami) for updates.
+### 🧪 Testing Your Chronoton Crystals
 
----
+- Run `npm test` to verify you haven’t created a timeline paradox.
+- New features require at least one unit test covering the happy path and one for the “reset” scenario (because timelines always get reset).
+- For UI changes, attach a screenshot or a Loom recording of your local variant in action.
 
-## ⏳ Version History
+### 🚨 Reporting a Temporal Anomaly (Bug)
 
-> *Every timeline leaves a footprint. Here's ours.*
+Found a bug? Open an issue with the `anomaly` tag and include:
+- Steps to reproduce the paradox.
+- Expected behavior vs. actual timeline corruption.
+- Browser/OS details (a.k.a. your Temporal Locator).
+- Any error logs (these are your Chronoton readings).
 
-### `v0.7.0` – "The Arcade Awakens" *(2026‑07‑26)*
-- ✨ Real-time voice chat via WebRTC (opt-in)
-- 🎨 Retro Arcade lobby theme – neon glow, CRT scanlines, cabinet vibes
-- 🐛 Fixed: player scores no longer reset on reconnection
-- ⚡ Matchmaking latency improved ~18% on global servers
+### 🏆 Rewards for Loyal Agents
 
-### `v0.6.2` – "The Ping Whisperer" *(2026‑06‑14)*
-- 🐛 Fixed: lobby desync when host migrated mid-game
-- 🛠 Refactored WebSocket layer for cleaner reconnects
-- 📜 Added: detail
+Every accepted PR earns you a **Cosmic Cubit** (virtual badge) on your profile. Collect five and you’ll unlock the **“Time Keeper”** role in the game-room community Discord. Plus, your name will be carved into the **Loom of Legends** (the CONTRIBUTORS.md file).
+
+Now suit up, grab your Tempad, and let’s make this timeline the best one yet. ⏳
+
+---  
+*TVA Engineering Department – Temporal Standard 2026-07-31*
