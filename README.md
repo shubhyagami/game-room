@@ -34,7 +34,7 @@ Host a trivia night, card game, or real‑time strategy match with friends scatt
 
 - Use the `/party` command to generate a shareable invite link with custom room name.
 - Enable **spectator mode** for non‑players to watch and chat.
-- Keep your network stable – game‑room uses WebRTC fallback for peer‑to‑peer play.
+- Keep your network stable – game-room uses WebRTC fallback for peer‑to‑peer play.
 
 ## 📊 Project Stats
 
@@ -44,53 +44,30 @@ Host a trivia night, card game, or real‑time strategy match with friends scatt
 | **Active Players** | 1,024+ (and growing) |
 | **Games Hosted** | 5,678+ virtual game nights |
 | **Average Response Time** | 42ms (WebRTC mode) |
-| **Contributors** | 37 (including you? 👀) |
-| **Uptime** | 99.97% (because chaos is managed) |
+| **C
 
-## Weekly Highlight – 2026‑07‑26
+---
 
-**Changelog**  
-- Added real‑time voice chat via WebRTC (opt‑in)  
-- New lobby theme: "Retro Arcade" – neon glow and CRT scanlines  
-- Fixed a bug where player scores would reset on reconnection  
-- Improved matchmaking latency by ~18% on global servers  
+## 🛣️ The Sacred Timeline: Roadmap
 
-## 📅 Changelog – 2026‑08‑01
+*The TVA Temporal Engineers are constantly pruning branching timelines to ensure the ultimate multiplayer experience. Here are the upcoming modifications scheduled for the Sacred Timeline.*
 
-**This Week's Updates**  
-- **Spectator Mode Enhancements**: Chat now persists across rounds and supports emoji reactions.  
-- **New `/party` Flags**: `--private` creates invite‑only rooms, `--max` sets player cap (2–16).  
-- **Performance**: Reduced CPU usage in idle lobbies by 30%.  
-- **UI Polish**: Hover tooltips on all player avatars show win/loss records.  
-- **Bug Fix**: Room creation no longer fails when using special characters in the name.
+### 🟢 Status: Nullified (Completed)
+- [x] EstablishTemporalLink (Initial WebRTC implementation)
+- [x] LobbyManagementProtocol (Room creation and invite system)
+- [x] ChronoSpectator (Spectator mode deployment)
+- [x] MinutemanAntiCheat (Basic turn-validation engine)
 
-## Roadmap
+### 🟡 Status: Active Branching (In Progress)
+- [ ] **Variant Detection Module:** Cross-platform player identity verification (so your friend on mobile can't pretend to be three different people to rig trivia night).
+- [ ] **Temporal Lobotomy Kit:** Custom UI themes for game rooms to match your group's vibe.
+- [ ] **Nexus Time-Sync:** Server-side authoritative clock to eliminate argumentative "I clicked first!" disputes once and for all.
 
-> *Building the multiverse of multiplayer, one timeline at a time.*
+### 🔴 Status: Unscheduled Timelines (Future)
+- [ ] **Alioth Packet Swarming:** Auto-scaling server architecture for massive battle royale lobbies (100+ player support).
+- [ ] **Time Twister Modding API:** Custom game mode creation toolkit for developers (bring your own rules, we bring the temporal infrastructure).
+- [ ] **Miss Minutes Echelon:** AI assistant for room hosts to dynamically adjust difficulty, enforce house rules, and moderate chat.
+- [ ] **Void Lobby:** A ghost-mode where eliminated players can hang out and watch the rest of the match without spoiling the outcome.
+- [ ] **Kang Dynasty Tournament Engine:** Built-in bracket generation for large-scale automated esports events.
 
-Our mission: make `game-room` the friendliest, fastest, and most chaotic-good game night host on the open web. Here's where we're headed next — and where you can help us branch the timeline.
-
-### 🛣️ Now Boarding – In Progress
-
-- [x] Real‑time voice chat via WebRTC *(shipped 2026‑07‑26)*
-- [x] Retro Arcade lobby theme *(shipped 2026‑07‑26)*
-- [ ] **Persistent player profiles** – carry your win streak, avatar, and stats across rooms
-- [ ] **Tournament
-
-## 🕰️ Contributing – How to Branch the Timeline
-
-> *“Every pull request is a Nexus Event. Handle with care.”*  
-> — TVA Handbook, Chapter 7
-
-Welcome, temporal agent! You’ve been selected to help us prune paradoxes and weave a better multiverse of multiplayer gaming. Before you start splicing timelines, read the following **Time Variance Authority Contribution Guidelines**.
-
-### 📜 Pruning Protocols (aka Code of Conduct)
-
-- **Respect the Sacred Timeline** – All contributions must follow the existing architecture. No branching off into spaghetti code.
-- **No Alioth Zones** – Keep your changes clean, documented, and free of uncaught exceptions. We don’t want to reset the entire timeline.
-- **Minutemen Review** – Every PR must be approved by at least one other agent before merging. Use the `review:request` label to summon a Variant Inspector.
-
-### 🧬 Branching Your Timeline
-
-1. **Fork the repository** – This creates your own pocket dimension.
-2. **Create a feature branch** – Name it after
+*Have a feature request that could alter the fabric of reality? Submit a PR, but remember: For All Time. Always.*
