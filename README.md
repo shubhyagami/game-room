@@ -44,30 +44,59 @@ Host a trivia night, card game, or real‑time strategy match with friends scatt
 | **Active Players** | 1,024+ (and growing) |
 | **Games Hosted** | 5,678+ virtual game nights |
 | **Average Response Time** | 42ms (WebRTC mode) |
-| **C
+| **C** | *(truncated – the timeline is still unfolding…)* |
 
 ---
 
-## 🛣️ The Sacred Timeline: Roadmap
+## 🕰️ Contributing – TVA‑Style Guidelines
 
-*The TVA Temporal Engineers are constantly pruning branching timelines to ensure the ultimate multiplayer experience. Here are the upcoming modifications scheduled for the Sacred Timeline.*
+Greetings, temporal agent! You’ve been selected to help maintain the **Sacred Timeline** of game‑room.  
+Before you submit a pull request, please align your actions with the following directives from the **Time Variance Authority**.
 
-### 🟢 Status: Nullified (Completed)
-- [x] EstablishTemporalLink (Initial WebRTC implementation)
-- [x] LobbyManagementProtocol (Room creation and invite system)
-- [x] ChronoSpectator (Spectator mode deployment)
-- [x] MinutemanAntiCheat (Basic turn-validation engine)
+### 📜 The Sacred Workflow
 
-### 🟡 Status: Active Branching (In Progress)
-- [ ] **Variant Detection Module:** Cross-platform player identity verification (so your friend on mobile can't pretend to be three different people to rig trivia night).
-- [ ] **Temporal Lobotomy Kit:** Custom UI themes for game rooms to match your group's vibe.
-- [ ] **Nexus Time-Sync:** Server-side authoritative clock to eliminate argumentative "I clicked first!" disputes once and for all.
+1. **Fork the timeline** – Create a personal branch of the repository. No Nexus Events, please.
+2. **Create a feature branch** named after your variant:  
+   `git checkout -b feat/<agent-codename>-<short-description>`  
+   Example: `feat/mobius-lobby-chat`
+3. **Write Minutemen‑approved commits** – Use clear, descriptive messages.  
+   ✅ `feat: add turn‑based timer for card games`  
+   ❌ `fix stuff lol`
+4. **Test against the Temporal Prime** – Run `npm test` and ensure no branches of reality break.
+5. **Open a Pull Request** – Mark it with the `TV-A` label. A **Time‑Keeper** will review it within one chronological cycle.
 
-### 🔴 Status: Unscheduled Timelines (Future)
-- [ ] **Alioth Packet Swarming:** Auto-scaling server architecture for massive battle royale lobbies (100+ player support).
-- [ ] **Time Twister Modding API:** Custom game mode creation toolkit for developers (bring your own rules, we bring the temporal infrastructure).
-- [ ] **Miss Minutes Echelon:** AI assistant for room hosts to dynamically adjust difficulty, enforce house rules, and moderate chat.
-- [ ] **Void Lobby:** A ghost-mode where eliminated players can hang out and watch the rest of the match without spoiling the outcome.
-- [ ] **Kang Dynasty Tournament Engine:** Built-in bracket generation for large-scale automated esports events.
+### ⚠️ Pruning Guidelines
 
-*Have a feature request that could alter the fabric of reality? Submit a PR, but remember: For All Time. Always.*
+- **No timeline incursions** – Keep your changes focused on a single feature or bug fix.
+- **Avoid paradoxes** – Do not introduce breaking changes without a deprecation notice.
+- **Respect the canon** – Follow the existing code style (ESLint config is your temporal compass).
+
+### 🕵️‍♂️ Reporting Anomalies (Issues)
+
+Found a bug that could collapse the entire game‑room universe?  
+Open an issue with the following template:
+
+```markdown
+**Temporal Coordinates** (steps to reproduce):  
+**Expected Sacred Outcome**:  
+**Actual Variant Behavior**:  
+**Environment** (OS, browser, node version):  
+**Screenshots / Logs** (nexus evidence):
+```
+
+### 🏆 Rewards for Loyal Agents
+
+Every accepted PR earns you a **Time‑Variant Contributor** badge.  
+Merge 5 PRs and you’ll receive a custom **TVA ID Card** (digital, non‑transferable, very official).  
+Merge 10 and we’ll name a minor game‑room feature after you (subject to timeline approval).
+
+### 📬 Contact the Time‑Keepers
+
+For urgent timeline matters, ping `@shubhyagami` or raise a **temporal beacon** (GitHub Issue with the `priority: nexus` label).
+
+> *“All timelines lead to game‑room.”*  
+> — TVA Mission Statement
+
+---
+
+*End of Temporal Directive*
