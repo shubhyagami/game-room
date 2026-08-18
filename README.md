@@ -1,20 +1,29 @@
-________                        ________
- /  _____/_____    _____   ____   \_____  \   ____   _______
-/   \  ___\__  \  /     \_/ __ \   /   |   \ /  _ \ /  ___/
-\    \_\  \/ __ \|  Y Y  \  ___/  /    |    (  <_> )___ \
- \______  (____  /__|_|  /\___  > \_______  /\____/____  >
-        \/     \/      \/     \/          \/            \/
-```
+# Game Room
 
 [![GitHub stars](https://img.shields.io/github/stars/shubhyagami/game-room?style=for-the-badge)](https://github.com/shubhyagami/game-room/stargazers)
 [![GitHub forks](https://img.shields.io/github/forks/shubhyagami/game-room?style=for-the-badge)](https://github.com/shubhyagami/game-room/network)
 [![GitHub license](https://img.shields.io/github/license/shubhyagami/game-room?style=for-the-badge)](https://github.com/shubhyagami/game-room/blob/main/LICENSE)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=for-the-badge)](http://makeapullrequest.com)
 
-> *“The best multiplayer experiences are built on connection, latency, and a little bit of chaos.”*  
-> — Anonymous Game Room Architect
+A lightweight, real-time multiplayer platform for hosting browser-based game nights. Handle lobby management, turn-based logic, and live score updates out of the box.
 
-## Quick Start
+## Features
+
+- **Lobby Management**: Create custom rooms with shareable invite links.
+- **Real-Time Sync**: Live score updates and state synchronization.
+- **Spectator Mode**: Allow non-players to watch and chat.
+- **WebRTC Fallback**: Peer-to-peer play with fallback for network stability.
+
+## Getting Started
+
+To get a local copy up and running, follow these simple steps.
+
+### Prerequisites
+
+- Node.js (v16 or higher)
+- npm
+
+### Installation
 
 ```bash
 git clone https://github.com/shubhyagami/game-room.git
@@ -25,78 +34,42 @@ npm start
 
 Open `http://localhost:3000` and invite your friends!
 
-## Featured Use Case
+## Usage
 
-**Virtual Game Night – 8 players, one room, zero lag**  
-Host a trivia night, card game, or real‑time strategy match with friends scattered across time zones. game‑room handles lobby management, turn‑based logic, and live score updates out of the box.
+Host a trivia night, card game, or real-time strategy match with friends scattered across time zones. Game Room easily supports up to 8 concurrent players in a single room with minimal latency.
 
-## Pro Tips
+**Tips:**
+- Use the `/party <room-name>` command in the app to generate a custom shareable invite link.
+- Enable **spectator mode** in the lobby settings for non-players to watch and chat.
 
-- Use the `/party` command to generate a shareable invite link with custom room name.
-- Enable **spectator mode** for non‑players to watch and chat.
-- Keep your network stable – game-room uses WebRTC fallback for peer‑to‑peer play.
+## Contributing
 
-## 📊 Project Stats
+Contributions are what make the open-source community such a fantastic place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
 
-| Metric | Value |
-|--------|-------|
-| **Lines of Code** | ~12,345 |
-| **Active Players** | 1,024+ (and growing) |
-| **Games Hosted** | 5,678+ virtual game nights |
-| **Average Response Time** | 42ms (WebRTC mode) |
-| **C** | *(truncated – the timeline is still unfolding…)* |
+1. Fork the Project
+2. Create your Feature Branch (`git checkout -b feat/amazing-feature`)
+3. Commit your Changes (`git commit -m 'feat: add some amazing feature'`)
+4. Push to the Branch (`git push origin feat/amazing-feature`)
+5. Open a Pull Request
 
----
+Please ensure your code passes `npm test` and adheres to the existing ESLint configuration before submitting.
 
-## 🕰️ Contributing – TVA‑Style Guidelines
+### Reporting Bugs
 
-Greetings, temporal agent! You’ve been selected to help maintain the **Sacred Timeline** of game‑room.  
-Before you submit a pull request, please align your actions with the following directives from the **Time Variance Authority**.
+If you find a bug, please open an issue and include the following details:
 
-### 📜 The Sacred Workflow
+- **Steps to reproduce**: Detailed actions to trigger the bug.
+- **Expected behavior**: What you expected to happen.
+- **Actual behavior**: What actually happened.
+- **Environment**: OS, browser, and Node.js version.
+- **Screenshots/Logs**: Any relevant error messages or visual context.
 
-1. **Fork the timeline** – Create a personal branch of the repository. No Nexus Events, please.
-2. **Create a feature branch** named after your variant:  
-   `git checkout -b feat/<agent-codename>-<short-description>`  
-   Example: `feat/mobius-lobby-chat`
-3. **Write Minutemen‑approved commits** – Use clear, descriptive messages.  
-   ✅ `feat: add turn‑based timer for card games`  
-   ❌ `fix stuff lol`
-4. **Test against the Temporal Prime** – Run `npm test` and ensure no branches of reality break.
-5. **Open a Pull Request** – Mark it with the `TV-A` label. A **Time‑Keeper** will review it within one chronological cycle.
+## License
 
-### ⚠️ Pruning Guidelines
+Distributed under the MIT License. See `LICENSE` for more information.
 
-- **No timeline incursions** – Keep your changes focused on a single feature or bug fix.
-- **Avoid paradoxes** – Do not introduce breaking changes without a deprecation notice.
-- **Respect the canon** – Follow the existing code style (ESLint config is your temporal compass).
+## Contact
 
-### 🕵️‍♂️ Reporting Anomalies (Issues)
+Shubhyagami - [@shubhyagami](https://github.com/shubhyagami)
 
-Found a bug that could collapse the entire game‑room universe?  
-Open an issue with the following template:
-
-```markdown
-**Temporal Coordinates** (steps to reproduce):  
-**Expected Sacred Outcome**:  
-**Actual Variant Behavior**:  
-**Environment** (OS, browser, node version):  
-**Screenshots / Logs** (nexus evidence):
-```
-
-### 🏆 Rewards for Loyal Agents
-
-Every accepted PR earns you a **Time‑Variant Contributor** badge.  
-Merge 5 PRs and you’ll receive a custom **TVA ID Card** (digital, non‑transferable, very official).  
-Merge 10 and we’ll name a minor game‑room feature after you (subject to timeline approval).
-
-### 📬 Contact the Time‑Keepers
-
-For urgent timeline matters, ping `@shubhyagami` or raise a **temporal beacon** (GitHub Issue with the `priority: nexus` label).
-
-> *“All timelines lead to game‑room.”*  
-> — TVA Mission Statement
-
----
-
-*End of Temporal Directive*
+Project Link: [https://github.com/shubhyagami/game-room](https://github.com/shubhyagami/game-room)
