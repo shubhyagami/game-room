@@ -1,7 +1,6 @@
 # Game Room
 
 [![Build Status](https://img.shields.io/github/actions/workflow/status/shubhyagami/game-room/ci.yml?branch=main&style=for-the-badge&label=build)](https://github.com/shubhyagami/game-room/actions)
-[![Stars](https://img.shields.io/github/stars/shubhyagami/game-room?style=for-the-badge)](https://github.com/shubhyagami/game-room/stargazers)
 [![License](https://img.shields.io/github/license/shubhyagami/game-room?style=for-the-badge)](https://github.com/shubhyagami/game-room/blob/main/LICENSE)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=for-the-badge)](http://makeapullrequest.com)
 
@@ -12,7 +11,7 @@ A lightweight, real-time multiplayer platform for hosting browser-based game nig
 - **Lobby Management**: Create custom rooms with shareable invite links.
 - **Real-Time Sync**: Live score updates and state synchronization.
 - **Spectator Mode**: Allow non-players to watch and chat.
-- **WebRTC Fallback**: Peer-to-peer play with automatic fallback for network stability.
+- **WebRTC Fallback**: Peer-to-peer play with an automatic fallback mechanism for network stability.
 
 ## Getting Started
 
@@ -25,7 +24,7 @@ npm install
 npm start
 ```
 
-Once the server is running, open `http://localhost:3000` in your browser and invite your friends to test it out. 
+Once the server is running, open `http://localhost:3000` in your browser and invite your friends to test it out.
 
 ## Usage
 
