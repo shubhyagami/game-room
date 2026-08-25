@@ -1,12 +1,16 @@
 # Game Room
-
+-------------
 [![Build Status](https://img.shields.io/github/actions/workflow/status/shubhyagami/game-room/ci.yml?branch=main&style=for-the-badge&label=build)](https://github.com/shubhyagami/game-room/actions)
 [![License](https://img.shields.io/github/license/shubhyagami/game-room?style=for-the-badge)](https://github.com/shubhyagami/game-room/blob/main/LICENSE)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=for-the-badge)](http://makeapullrequest.com)
+[![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-blue.svg?style=for-the-badge)](https://github.com/commitizen/cz-cli)
+[![Code Style: ESLint](https://img.shields.io/badge/code_style-eslint-yellow.svg?style=for-the-badge)](https://github.com/equivalent/airbnb-eslint-config)
 
-A lightweight, real-time multiplayer platform for hosting browser-based game nights. It handles lobby management, turn-based logic, and live score updates out of the box.
+## Real-time Multiplayer Platform for Browser-based Game Nights
 
-## Features
+Game Room is a lightweight, real-time multiplayer platform designed for hosting browser-based game nights. It offers lobby management, turn-based logic, and live score updates, making it perfect for trivia nights, card games, or real-time strategy matches with friends scattered across time zones.
+
+## Key Features
 
 - **Lobby Management**: Create custom rooms with shareable invite links.
 - **Real-Time Sync**: Live score updates and state synchronization.
@@ -15,38 +19,31 @@ A lightweight, real-time multiplayer platform for hosting browser-based game nig
 
 ## Getting Started
 
-To get a local copy up and running, clone the repository and install the dependencies. Make sure you have [Node.js](https://nodejs.org/) (v16 or higher) and npm installed.
+To set up a local Game Room instance, follow these steps:
 
-```bash
-git clone https://github.com/shubhyagami/game-room.git
-cd game-room
-npm install
-npm start
-```
+1. Clone the repository: `git clone https://github.com/shubhyagami/game-room.git`
+2. Install dependencies: `npm install`
+3. Start the server: `npm start`
 
 Once the server is running, open `http://localhost:3000` in your browser and invite your friends to test it out.
 
 ## Usage
 
-Game Room is designed for trivia nights, card games, or real-time strategy matches with friends scattered across time zones. It supports up to 8 concurrent players in a single room with minimal latency.
-
-**Tips:**
-- Use the `/party <room-name>` command in the app to generate a custom shareable invite link.
-- Enable **Spectator Mode** in the lobby settings for non-players to watch and chat.
+Game Room supports up to 8 concurrent players in a single room with minimal latency. Use the `/party <room-name>` command in the app to generate a custom shareable invite link. Enable **Spectator Mode** in the lobby settings for non-players to watch and chat.
 
 ## Contributing
 
-Contributions are what make the open-source community such a fantastic place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
+Contributions are welcome and greatly appreciated. To contribute, follow these steps:
 
 1. Fork the repository.
-2. Create your feature branch (`git checkout -b feat/amazing-feature`).
+2. Create a feature branch (`git checkout -b feat/amazing-feature`).
 3. Commit your changes (`git commit -m 'feat: add an amazing feature'`).
 4. Push to the branch (`git push origin feat/amazing-feature`).
 5. Open a Pull Request.
 
 Please ensure your code passes `npm test` and adheres to the existing ESLint configuration before submitting.
 
-### Reporting Bugs
+## Reporting Bugs
 
 If you find a bug, please open an issue and include the following details:
 
@@ -56,16 +53,9 @@ If you find a bug, please open an issue and include the following details:
 - **Environment**: OS, browser, and Node.js version.
 - **Screenshots/Logs**: Any relevant error messages or visual context.
 
-## Changelog
-
-### v1.1.0 - 2026-08-20
-- Refined lobby synchronization for up to 8 concurrent players.
-- Improved WebRTC fallback logic to better handle unstable peer connections.
-- Updated README structure for better clarity and onboarding.
-
 ## License
 
-Distributed under the MIT License. See `LICENSE` for more information.
+Game Room is distributed under the MIT License. See `LICENSE` for more information.
 
 ## Contact
 
