@@ -8,54 +8,68 @@
 
 ## Real-time Multiplayer Platform for Browser-based Game Nights
 
-Game Room is a lightweight, real-time multiplayer platform designed for hosting browser-based game nights. It offers lobby management, turn-based logic, and live score updates, making it perfect for trivia nights, card games, or real-time strategy matches with friends scattered across time zones.
+Game Room is a real-time, multiplayer platform designed for hosting browser-based game nights with friends. It offers lobby management, turn-based logic, and live score updates, making it perfect for trivia games, card games, or multiplayer strategy matches.
 
 ## Key Features
 
-- **Lobby Management**: Create custom rooms with shareable invite links.
-- **Real-Time Sync**: Live score updates and state synchronization.
-- **Spectator Mode**: Allow non-players to watch and chat.
-- **WebRTC Fallback**: Peer-to-peer play with an automatic fallback mechanism for network stability.
+### Lobby Management
+
+* Create and share custom rooms with invite links.
+* Manage players and settings from a centralized lobby.
+
+### Real-Time Sync
+
+* Live score updates and state synchronization for seamless gameplay.
+* Automate updates and eliminate latency issues.
+
+### Spectator Mode
+
+* Allow non-players to watch and chat in real-time.
+* Ensure an immersive experience for everyone involved.
+
+### WebRTC Fallback
+
+* Automatic fallback mechanism for network stability.
+* Ensure uninterrupted gameplay even in unreliable networks.
 
 ## Getting Started
 
-To set up a local Game Room instance, follow these steps:
+To set up Game Room locally:
 
 1. Clone the repository: `git clone https://github.com/shubhyagami/game-room.git`
 2. Install dependencies: `npm install`
-3. Start the server: `npm start`
+3. Run the server: `npm start`
 
-Once the server is running, open `http://localhost:3000` in your browser and invite your friends to test it out.
+Access Game Room by opening `http://localhost:3000` in your browser. Share the invite link to start playing with friends.
 
 ## Usage
 
-Game Room supports up to 8 concurrent players in a single room with minimal latency. Use the `/party <room-name>` command in the app to generate a custom shareable invite link. Enable **Spectator Mode** in the lobby settings for non-players to watch and chat.
+* Supports up to 8 concurrent players with minimal latency.
+* Use the `/party <room-name>` command to generate a custom invite link.
+* Enable **Spectator Mode** to allow non-players to watch and chat.
 
 ## Contributing
 
-Contributions are welcome and greatly appreciated. To contribute, follow these steps:
+Your contributions are invaluable to Game Room's growth. To contribute:
 
 1. Fork the repository.
-2. Create a feature branch (`git checkout -b feat/amazing-feature`).
-3. Commit your changes (`git commit -m 'feat: add an amazing feature'`).
-4. Push to the branch (`git push origin feat/amazing-feature`).
-5. Open a Pull Request.
-
-Please ensure your code passes `npm test` and adheres to the existing ESLint configuration before submitting.
+2. Create a feature branch (`git checkout -b feat/<feature-name>`).
+3. Commit changes (`git commit -m '<commit-message>'`).
+4. Push to the branch (`git push origin feat/<feature-name>`).
+5. Submit a Pull Request.
 
 ## Reporting Bugs
 
-If you find a bug, please open an issue and include the following details:
+If you encounter a bug, please:
 
-- **Steps to reproduce**: Detailed actions to trigger the bug.
-- **Expected behavior**: What you expected to happen.
-- **Actual behavior**: What actually happened.
-- **Environment**: OS, browser, and Node.js version.
-- **Screenshots/Logs**: Any relevant error messages or visual context.
+1. Open an issue with detailed steps to reproduce.
+2. Include expected behavior and actual behavior.
+3. Attach relevant error messages, screenshots, or logs.
+4. Specify your environment (OS, browser, and Node.js version).
 
 ## License
 
-Game Room is distributed under the MIT License. See `LICENSE` for more information.
+Game Room is distributed under the MIT License. See `LICENSE` for details.
 
 ## Contact
 
