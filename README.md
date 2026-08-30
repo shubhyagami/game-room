@@ -5,16 +5,15 @@ A lightweight, real‑time multiplayer platform for browser‑based game nights.
 [![Build Status](https://img.shields.io/github/actions/workflow/status/shubhyagami/game-room/ci.yml?branch=main&style=for-the-badge&label=build)](https://github.com/shubhyagami/game-room/actions)  
 [![License](https://img.shields.io/github/license/shubhyagami/game-room?style=for-the-badge)](https://github.com/shubhyagami/game-room/blob/main/LICENSE)  
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=for-the-badge)](https://github.com/shubhyagami/game-room/pulls)  
-[![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-blue.svg?style=for-the-badge)](https://github.com/commitizen/cz-cli)  
 [![Code Style: ESLint](https://img.shields.io/badge/code_style-eslint-yellow.svg?style=for-the-badge)](https://github.com/equivalent/airbnb-eslint-config)  
 
 ---
 
 ## Key Features  
 
-- **Lobby Management** – Create rooms, share invite links, and configure player settings.  
+- **Lobby Management** – Create rooms, generate invite links, and adjust player settings.  
 - **Real‑Time Sync** – Live score updates and state synchronization with automatic network fallback.  
-- **Spectator Mode** – Non‑players can watch and chat while games progress.  
+- **Spectator Mode** – Non‑players can watch games and chat simultaneously.  
 - **WebRTC Fallback** – Seamless operation on unstable connections.  
 - **Scalable** – Supports up to 8 concurrent players with low latency.  
 
@@ -33,12 +32,12 @@ A lightweight, real‑time multiplayer platform for browser‑based game nights.
    npm install
    ```  
 
-3. **Run the server**  
+3. **Start the server**  
    ```bash
    npm start
    ```  
 
-4. **Open** `http://localhost:3000` in a browser, generate an invite link, and start playing.  
+4. Open `http://localhost:3000` in a browser, generate an invite link, and begin playing.  
 
 ---
 
@@ -58,7 +57,7 @@ A lightweight, real‑time multiplayer platform for browser‑based game nights.
 4. Push to the branch (`git push origin feat/<feature-name>`).  
 5. Open a Pull Request.  
 
-Please adhere to the existing code style and run `npm run lint` before submitting.  
+Please follow the existing code style and run `npm run lint` before submitting.  
 
 ---
 
