@@ -1,6 +1,6 @@
 # Game Room  
 
-A lightweight, real‑time multiplayer platform for browser‑based game nights. Host lobby‑managed, turn‑based games—such as trivia, cards, and strategy—while displaying live scores and offering optional spectator chat.
+A lightweight, real‑time platform for browser‑based multiplayer game nights. Host lobby‑managed, turn‑based games—such as trivia, cards, and strategy—while displaying live scores and offering optional spectator chat.
 
 [![Build Status](https://img.shields.io/github/actions/workflow/status/shubhyagami/game-room/ci.yml?branch=main&style=for-the-badge&label=build)](https://github.com/shubhyagami/game-room/actions)  
 [![License](https://img.shields.io/github/license/shubhyagami/game-room?style=for-the-badge)](https://github.com/shubhyagami/game-room/blob/main/LICENSE)  
