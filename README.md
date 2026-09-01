@@ -1,65 +1,67 @@
 # Game Room  
-
-A lightweight, real‑time platform for browser‑based multiplayer game nights. Host lobby‑managed, turn‑based games—such as trivia, cards, and strategy—while displaying live scores and offering optional spectator chat.
-
 [![Build Status](https://img.shields.io/github/actions/workflow/status/shubhyagami/game-room/ci.yml?branch=main&style=for-the-badge&label=build)](https://github.com/shubhyagami/game-room/actions)  
 [![License](https://img.shields.io/github/license/shubhyagami/game-room?style=for-the-badge)](https://github.com/shubhyagami/game-room/blob/main/LICENSE)  
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=for-the-badge)](https://github.com/shubhyagami/game-room/pulls)  
 [![Code Style: ESLint](https://img.shields.io/badge/code_style-eslint-yellow.svg?style=for-the-badge)](https://github.com/equivalent/airbnb-eslint-config)  
 
----
+## Overview  
+Game Room is a lightweight, real‑time platform for hosting browser‑based multiplayer game nights. It supports lobby‑managed, turn‑based games such as trivia, card games, and strategy games. All participants see live score updates, and non‑players can watch the game and chat in spectator mode.
 
-## Key Features  
+## Features  
 
 - **Lobby Management** – Create rooms, generate invite links, and adjust player settings.  
-- **Real‑Time Sync** – Live score updates and state synchronization with automatic network fallback.  
-- **Spectator Mode** – Non‑players can watch games and chat simultaneously.  
-- **WebRTC Fallback** – Seamless operation on unstable connections.  
+- **Real‑time Sync** – Automatic state synchronization and live score updates with a graceful fallback to WebSocket.  
+- **Spectator Mode** – Watch non‑player games and participate in chat.  
+- **WebRTC Fallback** – Keep gameplay running on unstable connections.  
 - **Scalable** – Supports up to 8 concurrent players with low latency.  
 
----
+## Quick Start  
 
-## Getting Started  
+```bash
+# 1. Clone the repository
+git clone https://github.com/shubhyagami/game-room.git
+cd game-room
 
-1. **Clone the repository**  
-   ```bash
-   git clone https://github.com/shubhyagami/game-room.git
-   ```  
+# 2. Install dependencies
+npm install
 
-2. **Install dependencies**  
-   ```bash
-   cd game-room
-   npm install
-   ```  
+# 3. Start the server (default port 3000)
+npm start
 
-3. **Start the server**  
-   ```bash
-   npm start
-   ```  
+# 4. Open http://localhost:3000 in your browser, create an invite link, and invite friends.
+```
 
-4. Open `http://localhost:3000` in a browser, generate an invite link, and begin playing.  
-
----
+> **Tip:** Use `npm run dev` to launch the server with hot reloading during development.
 
 ## Usage  
 
-- **Create a custom room** with `/party <room-name>` to generate an invite link.  
-- **Enable Spectator Mode** via the lobby UI for watch‑and‑chat participants.  
-- **Manage players** – join, leave, or adjust settings directly from the lobby interface.  
+- **Create a room** – Type `/party <room-name>` in the console or click “Create Room” in the UI.  
+- **Join a room** – Click the invite link or paste it into the “Join Room” field.  
+- **Spectator Mode** – Enable “Spectate” in the lobby to watch the game and chat.  
+- **Player Controls** – Players can join, leave, or swap positions directly from the lobby interface.
 
----
+## Development  
+
+| Task | Command |
+|------|---------|
+| Install dependencies | `npm install` |
+| Run development server | `npm run dev` |
+| Lint the code | `npm run lint` |
+| Run tests | `npm test` |
+
+**Environment Variables**  
+`PORT` – The port on which the server listens (default `3000`).  
+`NODE_ENV` – Set to `production` for a production build.
 
 ## Contributing  
 
 1. Fork the repository.  
-2. Create a feature branch (`git checkout -b feat/<feature-name>`).  
-3. Make changes and commit (`git commit -m '<description>'`).  
-4. Push to the branch (`git push origin feat/<feature-name>`).  
-5. Open a Pull Request.  
+2. Create a feature branch: `git checkout -b feat/<feature-name>`.  
+3. Commit your changes with a clear message: `git commit -m '<description>'`.  
+4. Push the branch: `git push origin feat/<feature-name>`.  
+5. Open a pull request.
 
-Please follow the existing code style and run `npm run lint` before submitting.  
-
----
+> Please follow the existing code style, run `npm run lint` before submitting, and add tests for new functionality.
 
 ## Changelog  
 
@@ -68,18 +70,15 @@ Please follow the existing code style and run `npm run lint` before submitting.
 - Introduced Spectator Mode with chat.  
 - Improved lobby UI for better room management.  
 
----
+*(Further releases will be documented here.)*
 
 ## License  
 
-Distributed under the MIT License. See `LICENSE` for details.  
-
----
+Distributed under the MIT License. See the `LICENSE` file for details.
 
 ## Contact  
 
-**Shubhyagami** – [GitHub](https://github.com/shubhyagami) – [@shubhyagami](https://github.com/shubhyagami)  
-
-Project Link: [https://github.com/shubhyagami/game-room](https://github.com/shubhyagami/game-room)  
+- **Shubhyagami** – [GitHub](https://github.com/shubhyagami) – [@shubhyagami](https://github.com/shubhyagami)  
+- Project repo: [https://github.com/shubhyagami/game-room](https://github.com/shubhyagami/game-room)  
 
 *Last updated: 2026‑08‑28*
