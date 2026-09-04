@@ -6,9 +6,9 @@
 ![Code Style: ESLint](https://img.shields.io/badge/code_style-eslint-yellow?style=for-the-badge)
 
 Game Room is a lightweight, real‑time web application that lets friends play browser‑based, turn‑based games together.  
-It provides a simple lobby, live score updates, spectator mode, and a fallback for unstable connections.
+It offers a simple lobby, live score updates, spectator mode, and a fallback for flaky connections.
 
-> **Table of Contents**  
+> **Table of contents**  
 > • [Getting Started](#getting-started)  
 > • [Features](#features)  
 > • [Architecture](#architecture)  
@@ -24,77 +24,70 @@ It provides a simple lobby, live score updates, spectator mode, and a fallback f
 
 ## Getting Started
 
+> ⚡ Quick‑start:  
+> ```bash
+> git clone https://github.com/shubhyagami/game-room.git
+> cd game-room
+> npm install
+> npm start
+> ```
+> Open <http://localhost:3000> in your browser, create a room, and invite friends.
+
 ### Prerequisites
 
-- Node.js 20 or newer
-- npm (comes with Node.js)
+- **Node.js** 20 or newer (npm comes bundled)
 
 ### Install & Run
 
 ```bash
-# 1️⃣ Clone the repo
+# 1️⃣ Clone the repository
 git clone https://github.com/shubhyagami/game-room.git
 cd game-room
 
 # 2️⃣ Install dependencies
 npm install
 
-# 3️⃣ Start the server (default 3000)
+# 3️⃣ Start the server (default port 3000)
 npm start
 ```
 
-Open <http://localhost:3000> in your browser, create a room, and invite friends.
-
-> **Tip**: During development use `npm run dev` for hot reloading.
+For development with hot reloading, use `npm run dev`.
 
 ---
 
 ## Features
 
-- **Lobby management** – Create rooms, generate permanent invite links, set player limits.
-- **Real‑time sync** – Live score updates via WebSocket, with graceful fallback.
-- **WebRTC fallback** – Keeps the game functional on flaky connections.
-- **Spectator mode** – Non‑players can watch and chat while the game runs.
-- **Scalable latency** – Designed for up to 8 concurrent players with minimal lag.
+- **Lobby Management** – Create rooms, generate permanent invite links, and set player limits.  
+- **Real‑time Sync** – Live score updates via WebSocket with a graceful fallback.  
+- **WebRTC Fallback** – Keeps the game running on unstable connections.  
+- **Spectator Mode** – Non‑players can watch and chat while the game plays.  
+- **Scalable Latency** – Designed to support up to 8 concurrent players with minimal lag.  
 
 ---
 
 ## Architecture
 
 ```
-┌──────────────────────┐
-│  Browser Client     │
-│  (React / Vanilla JS) │
-└─────────────┬────────┘
-              │
-              ▼
-     ┌─────────────────┐
-     │  Express Server │
-     │  (Node.js v20+) │
-     └───────┬─────────┘
-             │
-             ├───── Socket.io (WebSocket) ────────┐
-             │                                │
-             └───── WebRTC (PeerConnection) ────────┘
+Browser Client (React) ──► Express Server (Node.js v20+) ──► Socket.io / WebRTC
 ```
 
-- The client connects to the server via WebSocket for fast updates.  
-- WebRTC is used only if the WebSocket connection drops; it keeps the game loop alive.  
-- Everything is written in JavaScript with ESLint enforcing the Airbnb style guide.
+The client connects to the server via WebSocket for fast updates.  
+If the WebSocket disconnects, a WebRTC `PeerConnection` keeps the game loop alive.  
+All code is written in JavaScript and linted with ESLint using the Airbnb style guide.
 
 ---
 
 ## Usage
 
-Below are common actions you can perform from the UI or chat commands.
+Common actions can be performed from the UI or via chat commands:
 
-| Action | UI/Chat Command | Notes |
-|--------|-----------------|-------|
-| Create a room | **Create Room** button | Generates a unique invite link. |
-| Join a room | Paste link into **Join Room** field, or `@join <link>` | |
-| Spectate | Toggle **Spectate** in the lobby | Join as a viewer; you can chat. |
-| Leave | **Leave** button or `/leave` command | |
-| Swap seats | Drag‑and‑drop in the lobby | Only owners can swap positions. |
+| Action        | UI / Chat Command           | Notes                               |
+| ------------- | ---------------------------- | ----------------------------------- |
+| Create a room  | **Create Room** button       | Generates a unique invite link.     |
+| Join a room    | Paste link into **Join Room** field, or `@join <link>` | |
+| Spectate      | Toggle **Spectate** in the lobby | Join as a viewer; you can chat.  |
+| Leave         | **Leave** button or `/leave` | |
+| Swap seats    | Drag‑and‑drop in the lobby  | Only room owners can swap positions. |
 
 ---
 
@@ -116,10 +109,10 @@ npm test
 
 ### Environment Variables
 
-| Variable    | Description                                 | Default  |
-|-------------|---------------------------------------------|----------|
-| `PORT`      | Server listening port                       | `3000`   |
-| `NODE_ENV`  | Runtime mode (`development` / `production`) | `development` |
+| Variable   | Description                        | Default   |
+| ---------- | ---------------------------------- | --------- |
+| `PORT`     | Server listening port              | `3000`    |
+| `NODE_ENV` | Runtime mode (`development`/`production`) | `development` |
 
 ---
 
@@ -137,12 +130,12 @@ All tests are written with Jest and cover core game logic and API endpoints.
 
 ## Contributing
 
-1. Fork the repository and create a feature branch: `git checkout -b feat/<name>`  
+1. Fork the repository and create a feature branch: `git checkout -b feat/<name>`.  
 2. Commit with a clear, conventional message.  
-3. Push to your fork: `git push origin feat/<name>`  
+3. Push to your fork: `git push origin feat/<name>`.  
 4. Open a pull request.
 
-> Please run `npm run lint` before submitting and write unit tests for new features.
+> Prior to submitting, run `npm run lint` and add unit tests for any new features.
 
 ---
 
@@ -153,7 +146,7 @@ All tests are written with Jest and cover core game logic and API endpoints.
 - Introduced spectator mode with chat.  
 - Improved lobby UI for better room management.
 
-*(Additional releases will be documented here.)*
+*(Further releases will be documented here.)*
 
 ---
 
@@ -166,5 +159,3 @@ MIT © [Shubhyagami](https://github.com/shubhyagami)
 ## Maintainers
 
 - **Shubhyagami** – [GitHub](https://github.com/shubhyagami) – [@shubhyagami](https://github.com/shubhyagami)
-
----
