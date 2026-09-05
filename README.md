@@ -1,30 +1,44 @@
 # Game Room
 
-![Build Status](https://img.shields.io/github/actions/workflow/status/shubhyagami/game-room/ci.yml?branch=main&style=for-the-badge&label=build)
-![License](https://img.shields.io/github/license/shubhyagami/game-room?style=for-the-badge)
-![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen?style=for-the-badge)
+![Build Status](https://img.shields.io/github/actions/workflow/status/shubhyagami/game-room/ci.yml?branch=main&style=for-the-badge&label=build)  
+![License](https://img.shields.io/github/license/shubhyagami/game-room?style=for-the-badge)  
+![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen?style=for-the-badge)  
 ![Code Style: ESLint](https://img.shields.io/badge/code_style-eslint-yellow?style=for-the-badge)
 
-Game Room is a lightweight, real‑time web application that lets friends play browser‑based turn‑based games together.  
-It offers a simple lobby, live score updates, spectator mode, and a WebRTC fallback for unstable connections.
+Game Room is a lightweight, real‑time web app that lets friends play simple turn‑based browser games together.  
+It features a lobby, live score updates, spectator mode, and a WebRTC fallback for unstable connections.
 
-> **Table of contents**
-> • [Getting Started](#getting-started)  
-> • [Features](#features)  
-> • [Architecture](#architecture)  
-> • [Usage](#usage)  
-> • [Development](#development)  
-> • [Testing](#testing)  
-> • [Contributing](#contributing)  
-> • [Changelog](#changelog)  
-> • [License](#license)  
-> • [Maintainers](#maintainers)
+---
+
+## Table of contents
+
+- [Overview](#overview)
+- [Getting Started](#getting-started)
+- [Features](#features)
+- [Architecture](#architecture)
+- [Usage](#usage)
+- [Development](#development)
+- [Testing](#testing)
+- [Contributing](#contributing)
+- [Changelog](#changelog)
+- [License](#license)
+- [Maintainers](#maintainers)
+
+---
+
+## Overview
+
+- **Browser‑based** – no need to install extra software
+- **Real‑time** – live score updates via WebSocket
+- **Reliable** – WebRTC fallback keeps the game loop alive if the socket drops
+- **Spectator mode** – non‑players can watch and chat
+- **Lightweight** – runs on a single Node.js process and a React front‑end
 
 ---
 
 ## Getting Started
 
-### Quick start (recommended)
+### Quick start
 
 ```bash
 git clone https://github.com/shubhyagami/game-room.git
@@ -37,61 +51,49 @@ Open <http://localhost:3000> in your browser, create a room, and invite friends.
 
 ### Prerequisites
 
-- **Node.js** 20 or newer (npm comes bundled)
+- Node.js **20+** (npm is bundled)
 
-### Install and run
+### Development mode
 
 ```bash
-# 1️⃣ Clone the repository
-git clone https://github.com/shubhyagami/game-room.git
-cd game-room
-
-# 2️⃣ Install dependencies
-npm install
-
-# 3️⃣ Start the server (default port 3000)
-npm start
+npm run dev   # hot‑reload server and client
 ```
-
-For development with hot reloading, run `npm run dev`.
 
 ---
 
 ## Features
 
-| Feature | Description |
-|---------|-------------|
-| Lobby management | Create rooms, generate permanent invite links, and set player limits |
-| Real‑time sync | Live score updates via WebSocket, with a graceful fallback |
-| WebRTC fallback | Keeps the game running on unstable connections |
-| Spectator mode | Non‑players can watch and chat while the game continues |
-| Low latency | Designed for up to 8 concurrent players with minimal lag |
+| Feature            | Description |
+|---------------------|-------------|
+| **Lobby** | Create rooms, set player limits, and generate permanent invite links |
+| **Real‑time sync** | Live score updates via WebSocket; graceful fallback to WebRTC |
+| **WebRTC fallback** | Keeps the game loop running if the socket disconnects |
+| **Spectator mode** | Viewers can chat while the game continues |
+| **Low latency** | Optimised for up to 8 concurrent players with minimal lag |
 
 ---
 
 ## Architecture
 
 ```
-Browser Client (React) ──► Express Server (Node.js) ──► Socket.io / WebRTC
+Browser (React) ──► Express (Node.js) ──► Socket.io / WebRTC
 ```
 
-The client connects to the server via WebSocket for fast updates.  
-If the WebSocket disconnects, a WebRTC `PeerConnection` keeps the game loop alive.  
-All code is written in JavaScript and linted with ESLint using the Airbnb style guide.
+The client talks to the server over a WebSocket for fast updates.  
+If the socket disconnects, a `PeerConnection` keeps the game loop alive.  
+All code is written in JavaScript and linted with ESLint using Airbnb’s style guide.
 
 ---
 
 ## Usage
 
-Common actions are available through the UI or via chat commands:
-
-| Action        | UI / Chat command | Notes |
-|---------------|-------------------|-------|
-| Create a room | **Create Room** button | Generates a unique invite link |
-| Join a room   | Paste link into **Join Room** field or `@join <link>` | |
-| Spectate      | Toggle **Spectate** in the lobby | Join as a viewer; you can chat |
-| Leave         | **Leave** button or `/leave` | |
-| Swap seats    | Drag‑and‑drop in the lobby | Only room owners can swap positions |
+| Action          | UI / Chat command | Notes |
+|-----------------|-------------------|-------|
+| Create a room   | **Create Room** button | Generates an invite link |
+| Join a room     | Paste link into **Join Room** field or `@join <link>` | |
+| Spectate        | Toggle **Spectate** in the lobby | Join as a viewer and chat |
+| Leave           | **Leave** button or `/leave` | |
+| Swap seats      | Drag‑and‑drop in the lobby | Only the room owner can swap positions |
 
 ---
 
@@ -101,45 +103,43 @@ Common actions are available through the UI or via chat commands:
 # Install dependencies
 npm install
 
-# Run the dev server with live reload
+# Run the dev server with hot reloading
 npm run dev
 
 # Lint the codebase
 npm run lint
 
-# Run the test suite
+# Test
 npm test
 ```
 
 ### Environment variables
 
-| Variable   | Description                          | Default   |
-|------------|--------------------------------------|-----------|
-| `PORT`     | Server listening port                | `3000`    |
-| `NODE_ENV` | Runtime mode (`development` / `production`) | `development` |
+| Variable   | Description                            | Default   |
+|-----------|----------------------------------------|-----------|
+| `PORT`    | Server listening port                  | `3000`    |
+| `NODE_ENV`| Runtime mode (`development` / `production`) | `development` |
 
 ---
 
 ## Testing
 
-Run the test suite with:
+The test suite uses Jest and covers core game logic and API endpoints.
 
 ```bash
 npm test
 ```
 
-All tests are written with Jest and cover core game logic and API endpoints.
-
 ---
 
 ## Contributing
 
-1. Fork the repository and create a feature branch: `git checkout -b feat/<name>`  
+1. Fork the repo and create a feature branch: `git checkout -b feat/<name>`  
 2. Commit with a clear, conventional message  
 3. Push to your fork: `git push origin feat/<name>`  
 4. Open a pull request
 
-Before submitting, run `npm run lint` and add unit tests for any new features.
+Before submitting, run `npm run lint` and write unit tests for any new features.
 
 ---
 
@@ -151,7 +151,7 @@ Before submitting, run `npm run lint` and add unit tests for any new features.
 - Introduced spectator mode with chat  
 - Improved lobby UI for better room management  
 
-*(Further releases will be documented here.)*
+*(Future releases will be documented here.)*
 
 ---
 
@@ -164,5 +164,3 @@ MIT © [Shubhyagami](https://github.com/shubhyagami)
 ## Maintainers
 
 - **Shubhyagami** – [GitHub](https://github.com/shubhyagami) – @shubhyagami
-
----
