@@ -5,17 +5,18 @@
 ![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen?style=for-the-badge)  
 ![Code Style: ESLint](https://img.shields.io/badge/code_style-eslint-yellow?style=for-the-badge)
 
-Game Room is a lightweight, real‑time web application that lets friends play simple turn‑based games together in the browser. It supports a lobby, live score updates, spectator mode, and a WebRTC fallback for unstable connections.
+Game Room is a browser‑based, turn‑based multiplayer game platform.  
+It lets you create private rooms, share a permanent invite link, and play games in real time with live score updates.  
+If the WebSocket drops, the game continues via a WebRTC fallback. Spectators can watch and chat without affecting gameplay.
 
 ---
 
-## Table of contents
+## Table of Contents
 
-- [Overview](#overview)
+- [Quick Start](#quick-start)
 - [Features](#features)
 - [Architecture](#architecture)
-- [Getting started](#getting-started)
-- [Usage](#usage)
+- [Using the App](#using-the-app)
 - [Development](#development)
 - [Testing](#testing)
 - [Contributing](#contributing)
@@ -25,27 +26,33 @@ Game Room is a lightweight, real‑time web application that lets friends play s
 
 ---
 
-## Overview
+## Quick Start
 
-| Aspect | Description |
-|--------|-------------|
-| Browser‑based | No additional software required |
-| Real‑time | Live score updates via WebSocket |
-| Resilient | WebRTC fallback keeps the game loop alive when the socket drops |
-| Spectator mode | Viewers can watch and chat without affecting gameplay |
-| Lightweight | Single Node.js process + React front‑end |
+```bash
+git clone https://github.com/shubhyagami/game-room.git
+cd game-room
+npm install
+npm start
+```
+
+Open <http://localhost:3000> in your browser, create or join a room, and start playing.
+
+**Prerequisites**
+
+- Node.js 20+ (npm comes bundled)
 
 ---
 
 ## Features
 
-| Feature | Description |
-|---------|-------------|
-| Lobby | Create rooms, set player limits, and share permanent invite links |
-| Real‑time sync | Fast score updates through WebSocket, with graceful fallback to WebRTC |
-| WebRTC fallback | Keeps the game loop running if the socket disconnects |
-| Spectator mode | Viewers can chat while the game continues |
-| Low latency | Optimised for up to 8 simultaneous players |
+| Feature | What it does |
+|--------|--------------|
+| Lobby | Create rooms, set player limits, and generate permanent invite links |
+| Real‑time sync | WebSocket updates for instant score changes |
+| WebRTC fallback | Keeps the game loop alive when the socket drops |
+| Spectator mode | Viewers can watch and chat without impacting gameplay |
+| Low latency | Optimized for up to 8 simultaneous players |
+| Hot‑reload | Development server updates code instantly |
 
 ---
 
@@ -55,44 +62,21 @@ Game Room is a lightweight, real‑time web application that lets friends play s
 Browser (React) ──► Express (Node.js) ──► Socket.io / WebRTC
 ```
 
-The client communicates with the server over WebSocket for instant updates. If the socket disconnects, a PeerConnection keeps the game loop alive. The entire codebase is in JavaScript and linted with ESLint using the Airbnb style guide.
+The React client talks to the Express server over WebSocket.  
+When the socket disconnects, a PeerConnection maintains the game flow.  
+All code is written in JavaScript and linted with ESLint (Airbnb style).
 
 ---
 
-## Getting started
-
-### Quick start
-
-```bash
-git clone https://github.com/shubhyagami/game-room.git
-cd game-room
-npm install
-npm start
-```
-
-Open <http://localhost:3000> in your browser, create a room, and invite friends.
-
-### Prerequisites
-
-- Node.js **20+** (npm is bundled)
-
-### Development mode
-
-```bash
-npm run dev   # hot‑reload server and client
-```
-
----
-
-## Usage
+## Using the App
 
 | Action | UI / Command | Notes |
 |--------|--------------|-------|
-| Create a room | **Create Room** button | Generates an invite link |
-| Join a room | Paste link into **Join Room** field or `@join <link>` |  |
-| Spectate | Toggle **Spectate** in the lobby | Join as a visitor and chat |
-| Leave | **Leave** button or `/leave` |  |
-| Swap seats | Drag‑and‑drop in the lobby | Only available to the room owner |
+| **Create a room** | `Create Room` button | Generates an invite link |
+| **Join a room** | `Join Room` field or `/join <link>` | |
+| **Spectate** | Toggle `Spectate` in the lobby | Can chat while watching |
+| **Leave** | `Leave` button or `/leave` | |
+| **Swap seats** | Drag‑and‑drop in the lobby | Only the room owner can move seats |
 
 ---
 
@@ -102,18 +86,18 @@ npm run dev   # hot‑reload server and client
 # Install dependencies
 npm install
 
-# Run the dev server with hot reloading
+# Run the dev server (client + server hot reload)
 npm run dev
 
-# Lint the codebase
+# Lint the code
 npm run lint
 ```
 
-### Environment variables
+### Environment Variables
 
-| Variable   | Description                           | Default |
-|------------|---------------------------------------|---------|
-| `PORT`     | Server listening port                 | `3000`  |
+| Variable   | Description | Default |
+|------------|-------------|---------|
+| `PORT`     | Server listening port | `3000` |
 | `NODE_ENV` | Runtime mode (`development` / `production`) | `development` |
 
 ---
@@ -135,7 +119,7 @@ npm test
 3. Push to your fork: `git push origin feat/<name>`  
 4. Open a pull request.
 
-Before submitting, run `npm run lint` and add unit tests for any new functionality.
+Please run `npm run lint` before submitting and add unit tests for new features.
 
 ---
 
@@ -145,7 +129,7 @@ Before submitting, run `npm run lint` and add unit tests for any new functionali
 
 - Added WebRTC fallback for unstable connections  
 - Introduced spectator mode with chat  
-- Improved lobby UI for better room management  
+- Improved lobby UI for room management  
 
 *(Future releases will be documented here.)*
 
@@ -160,3 +144,5 @@ MIT © [Shubhyagami](https://github.com/shubhyagami)
 ## Maintainers
 
 - **Shubhyagami** – [GitHub](https://github.com/shubhyagami) – @shubhyagami
+
+---
