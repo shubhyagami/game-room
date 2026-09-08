@@ -1,19 +1,19 @@
 # Game Room
 
-![Build Status](https://img.shields.io/github/actions/workflow/status/shubhyagami/game-room/ci.yml?branch=main&style=for-the-badge&label=build)
-![Code Coverage](https://img.shields.io/codecov/c/github/shubhyagami/game-room?style=for-the-badge)
-![MIT License](https://img.shields.io/github/license/shubhyagami/game-room?style=for-the-badge)
-![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen?style=for-the-badge)
+![Build Status](https://img.shields.io/github/actions/workflow/status/shubhyagami/game-room/ci.yml?branch=main&style=for-the-badge&label=build)  
+![Code Coverage](https://img.shields.io/codecov/c/github/shubhyagami/game-room?style=for-the-badge)  
+![MIT License](https://img.shields.io/github/license/shubhyagami/game-room?style=for-the-badge)  
+![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen?style=for-the-badge)  
 ![ESLint](https://img.shields.io/badge/code_style-eslint-yellow?style=for-the-badge)
 
 Game Room is a browser‑based, turn‑based multiplayer game platform.  
-Create private rooms, share permanent invite links, and play games in real time with live score updates. When the WebSocket disconnects, a WebRTC fallback keeps the game loop alive. Spectators can watch and chat without affecting gameplay.
+Create private rooms, share permanent invite links and play games in real time with live score updates. When a WebSocket disconnects, a WebRTC fallback keeps the loop alive. Spectators can watch and chat without affecting gameplay.
 
 ---
 
 ## Table of Contents
 
-- [Quick Start](#quick-start)
+- [Getting Started](#getting-started)
 - [Features](#features)
 - [Architecture](#architecture)
 - [Using the App](#using-the-app)
@@ -26,7 +26,7 @@ Create private rooms, share permanent invite links, and play games in real time 
 
 ---
 
-## Quick Start
+## Getting Started
 
 ```bash
 git clone https://github.com/shubhyagami/game-room.git
@@ -37,43 +37,44 @@ npm start
 
 Open <http://localhost:3000> in a browser, create or join a room, and start playing.
 
-**Prerequisites**  
+**Prerequisites**
+
 - Node.js 20+ (npm is bundled)
 
 ---
 
 ## Features
 
-| Feature                | Description |
-|------------------------|-------------|
-| Lobby                  | Create rooms, set player limits, and generate permanent invite links |
-| Real‑time sync         | WebSocket updates for instant score changes |
-| WebRTC fallback        | Keeps the game loop alive when the socket drops |
-| Spectator mode         | Viewers can watch and chat without impacting gameplay |
-| Low latency            | Optimized for up to 8 simultaneous players |
-| Hot‑reload             | Development server updates code instantly |
+- **Lobby** – Create rooms, set player limits, and generate permanent invite links.  
+- **Real‑time sync** – WebSocket updates for instant score changes.  
+- **WebRTC fallback** – Keeps the game loop alive when the socket drops.  
+- **Spectator mode** – Viewers can watch and chat without impacting gameplay.  
+- **Low latency** – Optimized for up to 8 simultaneous players.  
+- **Hot reload** – Development server updates code instantly.
 
 ---
 
 ## Architecture
 
-```
+```text
 Browser (React) ──► Express (Node.js) ──► Socket.io / WebRTC
 ```
 
-The React client talks to the Express server over WebSocket. When the socket disconnects, a PeerConnection maintains the game flow. All code is written in JavaScript and linted with ESLint (Airbnb style).
+The React client communicates with the Express server over WebSockets.  
+When the socket disconnects, a PeerConnection maintains the game flow.  
+All code is written in JavaScript and linted with ESLint (Airbnb style).
 
 ---
 
 ## Using the App
 
-| Action          | UI / Command                | Notes                              |
-|-----------------|----------------------------|------------------------------------|
-| Create a room   | "Create Room" button       | Generates an invite link           |
-| Join a room     | "Join Room" field or `/join <link>` |                                      |
-| Spectate        | Toggle "Spectate" in lobby | Can chat while watching            |
-| Leave           | "Leave" button or `/leave` |                                      |
-| Swap seats      | Drag‑and‑drop in lobby      | Only the room owner can move seats |
+| Action          | UI / Command                    | Notes                                   |
+|-----------------|---------------------------------|-----------------------------------------|
+| Create a room   | “Create Room” button            | Generates an invite link                 |
+| Join a room     | “Join Room” field or `/join <link>` |                                         |
+| Spectate        | Toggle “Spectate” in the lobby   | Can chat while watching                 |
+| Leave           | “Leave” button or `/leave`        |                                         |
+| Swap seats      | Drag‑and‑drop in the lobby       | Only the room owner can move seats      |
 
 ---
 
@@ -92,10 +93,10 @@ npm run lint
 
 ### Environment Variables
 
-| Variable   | Description                                | Default |
-|------------|--------------------------------------------|---------|
-| `PORT`     | Server listening port                      | `3000`  |
-| `NODE_ENV` | Runtime mode (`development` / `production`) | `development` |
+| Variable  | Description                              | Default      |
+|----------|------------------------------------------|---------------|
+| `PORT`   | Server listening port                    | `3000`        |
+| `NODE_ENV` | Runtime mode (`development`/`production`) | `development` |
 
 ---
 
@@ -107,28 +108,28 @@ The test suite uses Jest and covers core game logic and API endpoints.
 npm test
 ```
 
+Run `npm test -- --watch` for interactive testing.
+
 ---
 
 ## Contributing
 
-1. Fork the repo and create a feature branch: `git checkout -b feat/<name>`
-2. Commit with a clear, conventional message.
-3. Push to your fork: `git push origin feat/<name>`
-4. Open a pull request.
+1. Fork the project and create a feature branch: `git checkout -b feat/<name>`.  
+2. Write clear, concise commits that follow a conventional message format.  
+3. Push your branch and open a pull request.  
+4. Before submitting, run `npm run lint` and add relevant unit tests.
 
-Before submitting, run `npm run lint` and add unit tests for new features.
+Pull requests are welcome—please keep them small and focused.
 
 ---
 
 ## Changelog
 
-**0.3.0 – 2026‑08‑28**
+### 0.3.0 – 2026‑08‑28
 
-- Added WebRTC fallback for unstable connections  
-- Introduced spectator mode with chat  
-- Improved lobby UI for room management  
-
-*Future releases will be documented here.*
+- Added WebRTC fallback for unstable connections.  
+- Introduced spectator mode with chat.  
+- Improved lobby UI for room management.
 
 ---
 
