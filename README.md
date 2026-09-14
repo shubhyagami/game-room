@@ -1,101 +1,85 @@
 # Game Room
 
+A browser‑based, turn‑based multiplayer platform that lets you create private rooms, share permanent invite links, and play in real time with live score updates. If a WebSocket disconnects, a WebRTC fallback keeps the game loop alive while spectators can watch and chat without affecting gameplay.
+
 ![Build Status](https://img.shields.io/github/actions/workflow/status/shubhyagami/game-room/ci.yml?branch=main&style=for-the-badge&label=build)  
 ![Code Coverage](https://img.shields.io/codecov/c/github/shubhyagami/game-room?style=for-the-badge)  
 ![MIT License](https://img.shields.io/github/license/shubhyagami/game-room?style=for-the-badge)  
 ![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen?style=for-the-badge)  
 ![ESLint](https://img.shields.io/badge/code_style-eslint-yellow?style=for-the-badge)
 
-Game Room is a browser‑based, turn‑based multiplayer game platform.  
-Create private rooms, share permanent invite links and play games in real time with live score updates. When a WebSocket disconnects, a WebRTC fallback keeps the loop alive. Spectators can watch and chat without affecting gameplay.
-
----
-
-## Table of Contents
-
-- [Getting Started](#getting-started)
-- [Features](#features)
-- [Architecture](#architecture)
-- [Using the App](#using-the-app)
-- [Development](#development)
-- [Testing](#testing)
-- [Contributing](#contributing)
-- [Changelog](#changelog)
-- [License](#license)
-- [Maintainers](#maintainers)
-
----
-
-## Getting Started
-
-```bash
-git clone https://github.com/shubhyagami/game-room.git
-cd game-room
-npm install
-npm start
-```
-
-Open <http://localhost:3000> in a browser, create or join a room, and start playing.
-
-**Prerequisites**
-
-- Node.js 20+ (npm is bundled)
-
 ---
 
 ## Features
 
-- **Lobby** – Create rooms, set player limits, and generate permanent invite links.  
-- **Real‑time sync** – WebSocket updates for instant score changes.  
-- **WebRTC fallback** – Keeps the game loop alive when the socket drops.  
-- **Spectator mode** – Viewers can watch and chat without impacting gameplay.  
-- **Low latency** – Optimized for up to 8 simultaneous players.  
-- **Hot reload** – Development server updates code instantly.
+| Feature | Description |
+|---------|-------------|
+| **Lobby** | Create rooms, set a player limit, and generate permanent invite links. |
+| **Real‑time sync** | Instant score updates via WebSocket. |
+| **WebRTC fallback** | Keeps the game loop running when the socket drops. |
+| **Spectator mode** | Viewers can watch and chat without influencing gameplay. |
+| **Low latency** | Optimised for up to eight concurrent players. |
+| **Hot reload** | Development server reflects changes immediately. |
+
+---
+
+## Quick Start
+
+```bash
+git clone https://github.com/shubhyagami/game-room.git
+cd game-room
+npm install          # or `npm ci` for clean install
+npm run dev           # starts the client & server with hot‑reload
+```
+
+Open <http://localhost:3000> in a browser, create or join a room, and start playing.
+
+> **Prerequisites** – Node.js 20 or later (npm comes bundled).
 
 ---
 
 ## Architecture
 
-```text
-Browser (React) ──► Express (Node.js) ──► Socket.io / WebRTC
+```
+Browser (React) ⟶ Express (Node.js) ⟶ Socket.io / WebRTC
 ```
 
-The React client communicates with the Express server over WebSockets.  
-When the socket disconnects, a PeerConnection maintains the game flow.  
-All code is written in JavaScript and linted with ESLint (Airbnb style).
+The React client talks to the Express server over WebSockets.  
+When the socket disconnects, a PeerConnection keeps the game state in sync.  
+The entire codebase is written in JavaScript, linted with Airbnb‑style ESLint.
 
 ---
 
 ## Using the App
 
-| Action          | UI / Command                    | Notes                                   |
-|-----------------|---------------------------------|-----------------------------------------|
-| Create a room   | “Create Room” button            | Generates an invite link                 |
-| Join a room     | “Join Room” field or `/join <link>` |                                         |
-| Spectate        | Toggle “Spectate” in the lobby   | Can chat while watching                 |
-| Leave           | “Leave” button or `/leave`        |                                         |
-| Swap seats      | Drag‑and‑drop in the lobby       | Only the room owner can move seats      |
+| Action | UI / Command | Notes |
+|--------|--------------|-------|
+| **Create a room** | “Create Room” button | Generates a permanent invite link |
+| **Join a room** | “Join Room” field or `/join <link>` |  |
+| **Spectate** | Toggle “Spectate” in the lobby | Viewers can chat while watching |
+| **Leave** | “Leave” button or `/leave` |  |
+| **Swap seats** | Drag‑and‑drop | Only the room owner can move seats |
 
 ---
 
 ## Development
 
 ```bash
-# Install dependencies
+# Install or update dependencies
 npm install
 
-# Run the dev server (client + server hot reload)
+# Start the development server (client + server hot reload)
 npm run dev
 
-# Lint the code
+# Lint the codebase
 npm run lint
 ```
 
 ### Environment Variables
 
-| Variable  | Description                              | Default      |
-|----------|------------------------------------------|---------------|
-| `PORT`   | Server listening port                    | `3000`        |
+| Variable   | Description                     | Default     |
+|------------|----------------------------------|-------------|
+| `PORT`     | Server listening port            | `3000`      |
 | `NODE_ENV` | Runtime mode (`development`/`production`) | `development` |
 
 ---
@@ -114,12 +98,12 @@ Run `npm test -- --watch` for interactive testing.
 
 ## Contributing
 
-1. Fork the project and create a feature branch: `git checkout -b feat/<name>`.  
-2. Write clear, concise commits that follow a conventional message format.  
-3. Push your branch and open a pull request.  
+1. Fork the repository and create a branch: `git checkout -b feat/<name>`.  
+2. Follow [conventional commit](https://www.conventionalcommits.org/) style.  
+3. Push the branch and open a pull request.  
 4. Before submitting, run `npm run lint` and add relevant unit tests.
 
-Pull requests are welcome—please keep them small and focused.
+Pull requests should be small and focused.
 
 ---
 
@@ -142,3 +126,5 @@ MIT © [Shubhyagami](https://github.com/shubhyagami)
 ## Maintainers
 
 - **Shubhyagami** – [GitHub](https://github.com/shubhyagami) – @shubhyagami
+
+---
