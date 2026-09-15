@@ -1,25 +1,41 @@
 # Game Room
 
-A browser‑based, turn‑based multiplayer platform that lets you create private rooms, share permanent invite links, and play in real time with live score updates. If a WebSocket disconnects, a WebRTC fallback keeps the game loop alive while spectators can watch and chat without affecting gameplay.
+A lightweight, browser‑based, turn‑based multiplayer platform.  
+Players can create private rooms, share permanent invite links, and play in real time with live score updates.  
+If a WebSocket disconnects, a WebRTC fallback keeps the game loop alive while spectators can watch and chat without affecting gameplay.
 
 ![Build Status](https://img.shields.io/github/actions/workflow/status/shubhyagami/game-room/ci.yml?branch=main&style=for-the-badge&label=build)  
 ![Code Coverage](https://img.shields.io/codecov/c/github/shubhyagami/game-room?style=for-the-badge)  
 ![MIT License](https://img.shields.io/github/license/shubhyagami/game-room?style=for-the-badge)  
 ![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen?style=for-the-badge)  
-![ESLint](https://img.shields.io/badge/code_style-eslint-yellow?style=for-the-badge)
+![ESLint](https://img.shields.io/badge/code_style-eslint-yellow?style=for-the-badge)  
+![Node.js 20+](https://img.shields.io/badge/node-20%2B-brightgreen?style=for-the-badge)
+
+---
+
+## Overview
+
+Game Room lets you:
+
+- **Host a private lobby** with a configurable player limit.
+- **Invite friends** via a permanent link that works forever.
+- **Play in real time** – scores and turns sync instantly over WebSocket.
+- **Stay connected** – a WebRTC PeerConnection takes over if the socket drops.
+- **Spectate** – viewers can watch and chat without influencing the game.
+- **Develop locally** with hot‑reloading for both client and server.
 
 ---
 
 ## Features
 
-| Feature | Description |
-|---------|-------------|
-| **Lobby** | Create rooms, set a player limit, and generate permanent invite links. |
-| **Real‑time sync** | Instant score updates via WebSocket. |
-| **WebRTC fallback** | Keeps the game loop running when the socket drops. |
-| **Spectator mode** | Viewers can watch and chat without influencing gameplay. |
+| Feature          | Description |
+|------------------|-------------|
+| **Lobby** | Create rooms, set a player cap, and generate permanent invite links. |
+| **Real‑time sync** | Instant score and turn updates through WebSocket. |
+| **WebRTC fallback** | Keeps the game loop alive when network connections fail. |
+| **Spectator mode** | Viewers can watch and chat while the game stays unchanged. |
 | **Low latency** | Optimised for up to eight concurrent players. |
-| **Hot reload** | Development server reflects changes immediately. |
+| **Hot reload** | Development server reflects changes instantly. |
 
 ---
 
@@ -28,29 +44,29 @@ A browser‑based, turn‑based multiplayer platform that lets you create privat
 ```bash
 git clone https://github.com/shubhyagami/game-room.git
 cd game-room
-npm install          # or `npm ci` for clean install
-npm run dev           # starts the client & server with hot‑reload
+npm ci          # clean install
+npm run dev     # start client & server with hot‑reload
 ```
 
 Open <http://localhost:3000> in a browser, create or join a room, and start playing.
 
-> **Prerequisites** – Node.js 20 or later (npm comes bundled).
+> **Prerequisites** – Node.js 20 or newer (npm is bundled).
 
 ---
 
 ## Architecture
 
 ```
-Browser (React) ⟶ Express (Node.js) ⟶ Socket.io / WebRTC
+React (browser) ⟶ Express (Node.js) ⟶ Socket.io / WebRTC
 ```
 
-The React client talks to the Express server over WebSockets.  
-When the socket disconnects, a PeerConnection keeps the game state in sync.  
-The entire codebase is written in JavaScript, linted with Airbnb‑style ESLint.
+The client talks to the Express server over WebSockets.  
+If the socket drops, a `RTCPeerConnection` keeps the game state synchronized.  
+All code is written in JavaScript and linted with Airbnb's ESLint configuration.
 
 ---
 
-## Using the App
+## Basic Usage
 
 | Action | UI / Command | Notes |
 |--------|--------------|-------|
@@ -58,7 +74,7 @@ The entire codebase is written in JavaScript, linted with Airbnb‑style ESLint.
 | **Join a room** | “Join Room” field or `/join <link>` |  |
 | **Spectate** | Toggle “Spectate” in the lobby | Viewers can chat while watching |
 | **Leave** | “Leave” button or `/leave` |  |
-| **Swap seats** | Drag‑and‑drop | Only the room owner can move seats |
+| **Swap seats** | Drag‑and‑drop | Only the room owner may move seats |
 
 ---
 
@@ -66,20 +82,20 @@ The entire codebase is written in JavaScript, linted with Airbnb‑style ESLint.
 
 ```bash
 # Install or update dependencies
-npm install
+npm ci
 
-# Start the development server (client + server hot reload)
+# Start dev server (client + server hot reload)
 npm run dev
 
-# Lint the codebase
+# Lint
 npm run lint
 ```
 
 ### Environment Variables
 
 | Variable   | Description                     | Default     |
-|------------|----------------------------------|-------------|
-| `PORT`     | Server listening port            | `3000`      |
+|-----------|----------------------------------|-------------|
+| `PORT`    | Server listening port           | `3000`      |
 | `NODE_ENV` | Runtime mode (`development`/`production`) | `development` |
 
 ---
@@ -90,20 +106,20 @@ The test suite uses Jest and covers core game logic and API endpoints.
 
 ```bash
 npm test
+# Interactive watch mode
+npm test -- --watch
 ```
-
-Run `npm test -- --watch` for interactive testing.
 
 ---
 
 ## Contributing
 
-1. Fork the repository and create a branch: `git checkout -b feat/<name>`.  
-2. Follow [conventional commit](https://www.conventionalcommits.org/) style.  
-3. Push the branch and open a pull request.  
-4. Before submitting, run `npm run lint` and add relevant unit tests.
+1. Fork the repository and create a feature branch: `git checkout -b feat/<name>`.
+2. Follow the [conventional‑commit](https://www.conventionalcommits.org/) format.
+3. Run `npm run lint` and add unit tests for any new functionality.
+4. Submit a small, focused pull request.
 
-Pull requests should be small and focused.
+Pull requests are welcome and appreciated!
 
 ---
 
@@ -111,8 +127,8 @@ Pull requests should be small and focused.
 
 ### 0.3.0 – 2026‑08‑28
 
-- Added WebRTC fallback for unstable connections.  
-- Introduced spectator mode with chat.  
+- Added WebRTC fallback for unstable connections.
+- Introduced spectator mode with chat.
 - Improved lobby UI for room management.
 
 ---
