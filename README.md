@@ -1,24 +1,24 @@
-# Game Room
+# Game Room
 
-Game Room is a lightweight, browser‑based, turn‑based multiplayer platform.  
-Players can create private rooms, share permanent invite links, and play in real time with instant score updates.  
-If the WebSocket disconnects, a WebRTC fallback keeps the game loop alive while spectators can watch and chat without affecting gameplay.
+**Game Room** is a lightweight browser‑based, turn‑based multiplayer platform written in JavaScript.  
+Players can create private lobbies, generate permanent invite links, and play in real time with instant score updates.  
+If a WebSocket disconnects, a WebRTC fallback keeps the game loop alive while spectators can watch and chat without affecting gameplay.
 
-![Build Status](https://img.shields.io/github/actions/workflow/status/shubhyagami/game-room/ci.yml?branch=main&style=for-the-badge&label=build)  
-![Code Coverage](https://img.shields.io/codecov/c/github/shubhyagami/game-room?style=for-the-badge)  
-![License](https://img.shields.io/github/license/shubhyagami/game-room?style=for-the-badge)  
-![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen?style=for-the-badge)  
-![Node.js 20+](https://img.shields.io/badge/node-20%2B-brightgreen?style=for-the-badge)  
+![Build](https://img.shields.io/github/actions/workflow/status/shubhyagami/game-room/ci.yml?branch=main&style=for-the-badge&label=build)
+![Coverage](https://img.shields.io/codecov/c/github/shubhyagami/game-room?style=for-the-badge)
+![License](https://img.shields.io/github/license/shubhyagami/game-room?style=for-the-badge)
+![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen?style=for-the-badge)
+![Node 20+](https://img.shields.io/badge/node-20%2B-brightgreen?style=for-the-badge)
 
 ---
 
-## Table of contents
+## Table of Contents
 
 - [Overview](#overview)
 - [Features](#features)
-- [Quick start](#quick-start)
+- [Getting Started](#getting-started)
 - [Architecture](#architecture)
-- [Basic usage](#basic-usage)
+- [Basic Usage](#basic-usage)
 - [Development](#development)
 - [Testing](#testing)
 - [Contributing](#contributing)
@@ -30,37 +30,37 @@ If the WebSocket disconnects, a WebRTC fallback keeps the game loop alive while 
 
 ## Overview
 
-Game Room offers:
+Game Room provides:
 
-- **Private lobbies** with a configurable player limit.
-- **Permanent invite links** that work forever.
-- **Real‑time gameplay** – turns and scores sync instantly via WebSocket.
-- **WebRTC fallback** ensures continuity if the socket drops.
-- **Spectator mode** – viewers can watch and chat without influencing the game.
-- **Hot‑reload development** for both client and server.
+- **Private lobbies** with configurable player caps
+- **Permanent invite links** that never expire
+- **Real‑time gameplay** – turns and scores sync instantly via Socket.io
+- **WebRTC fallback** that keeps the game loop running when the WebSocket drops
+- **Spectator mode** – viewers can watch and chat without influencing the game
+- **Hot‑reload development** for both client and server
 
 ---
 
 ## Features
 
-| Area | Detail |
-|------|--------|
-| Lobby | Create rooms, set player cap, generate permanent invites |
-| Real‑time sync | Instant score & turn updates (Socket.io) |
-| WebRTC fallback | Keeps game loop alive when connections fail |
-| Spectator mode | Viewers can chat while watching |
+| Feature | Description |
+|---------|-------------|
+| Lobby Management | Create rooms, set player limits, generate permanent invites |
+| Real‑time sync | Instant score and turn updates over WebSocket |
+| WebRTC fallback | Maintains game state when the socket fails |
+| Spectator mode | Viewers can watch and chat while games continue |
 | Low latency | Optimised for up to eight concurrent players |
-| Hot reload | Development server auto‑updates on file changes |
+| Development workflow | Hot‑reload for the client and server |
 
 ---
 
-## Quick start
+## Getting Started
 
 ```bash
 git clone https://github.com/shubhyagami/game-room.git
 cd game-room
-npm ci        # clean install
-npm run dev   # start client & server with hot‑reload
+npm ci          # clean install
+npm run dev     # start client & server with hot‑reload
 ```
 
 Open <http://localhost:3000> in a browser, create or join a room, and start playing.
@@ -72,21 +72,21 @@ Open <http://localhost:3000> in a browser, create or join a room, and start play
 ## Architecture
 
 ```
-React (browser) ⟶ Express (Node.js) ⟶ Socket.io / WebRTC
+React (client)  <->  Express (Node.js)  <->  Socket.io / WebRTC
 ```
 
-The client talks to the Express server over WebSockets. If the socket disconnects, a `RTCPeerConnection` takes over to keep the game state synchronized. All code is written in JavaScript and linted with Airbnb’s ESLint configuration.
+The client communicates with the Express server over WebSockets. When the socket disconnects, a `RTCPeerConnection` takes over to keep the game state synchronized. All code is written in JavaScript and follows Airbnb’s ESLint configuration.
 
 ---
 
-## Basic usage
+## Basic Usage
 
-| Action | UI / Command | Notes |
-|--------|--------------|-------|
-| Create a room | “Create Room” button | Generates a permanent invite link |
-| Join a room | “Join Room” field or `/join <link>` |  |
+| Action | UI | Note |
+|--------|----|------|
+| Create a room | “Create Room” button | Generates a permanent invite link |
+| Join a room | “Join Room” field or `/join <link>` | – |
 | Spectate | Toggle “Spectate” in the lobby | Viewers can chat while watching |
-| Leave | “Leave” button or `/leave` |  |
+| Leave | “Leave” button or `/leave` | – |
 | Swap seats | Drag‑and‑drop | Only the room owner may move seats |
 
 ---
@@ -104,11 +104,11 @@ npm run dev
 npm run lint
 ```
 
-### Environment variables
+### Environment Variables
 
-| Variable   | Description                               | Default      |
-|------------|-------------------------------------------|--------------|
-| `PORT`     | Server listening port                      | `3000`       |
+| Variable   | Description                                 | Default |
+|------------|---------------------------------------------|---------|
+| `PORT`     | Server listening port                       | `3000`  |
 | `NODE_ENV` | Runtime mode (`development` / `production`) | `development` |
 
 ---
@@ -139,9 +139,9 @@ Pull requests are welcome and appreciated!
 ## Changelog
 
 ### 0.3.0 – 2026‑08‑28
-- Added WebRTC fallback for unstable connections.
-- Introduced spectator mode with chat.
-- Improved lobby UI for room management.
+- Added WebRTC fallback for unstable connections
+- Introduced spectator mode with chat
+- Improved lobby UI for room management
 
 ---
 
