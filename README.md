@@ -1,6 +1,6 @@
 # Game Room
 
-**Game Room** is a lightweight, browser‑based, turn‑based multiplayer platform written in JavaScript. It lets you create private lobbies, generate permanent invite links, and play in real time with instant score updates. When a WebSocket disconnects, an integrated WebRTC fallback keeps the game loop alive, while spectators can watch and chat without affecting gameplay.
+**Game Room** is a lightweight, browser‑based, turn‑based multiplayer platform built with React, Express, Socket.io, and WebRTC. It lets you create private lobbies, generate permanent invite links, and play in real‑time with instant score updates. When a WebSocket disconnects, a WebRTC fallback keeps the game loop alive, while spectators can watch and chat without affecting gameplay.
 
 ![Build](https://img.shields.io/github/actions/workflow/status/shubhyagami/game-room/ci.yml?branch=main&style=for-the-badge&label=build)
 ![Coverage](https://img.shields.io/codecov/c/github/shubhyagami/game-room?style=for-the-badge)
@@ -28,59 +28,59 @@
 
 ## Overview
 
-Game Room provides:
+Game Room offers a straightforward way to host private turn‑based games:
 
-- **Private lobbies** with configurable player caps
-- **Permanent invite links** that never expire
-- **Real‑time gameplay** – turns and scores sync instantly via Socket.io
-- **WebRTC fallback** that keeps the game loop running when the WebSocket drops
-- **Spectator mode** – viewers can watch and chat without influencing the game
-- **Hot‑reload** for both client and server during development
+- **Private lobbies** with configurable player caps  
+- **Permanent, non‑expiring invite links**  
+- **Real‑time gameplay** – turns and scores sync instantly via Socket.io  
+- **WebRTC fallback** keeps the game alive when the WebSocket drops  
+- **Spectator mode** – viewers can watch and chat without influencing the game  
+- **Hot‑reload** for both client and server during development  
 
 ---
 
 ## Features
 
-| Feature                 | Description |
-|-------------------------|-------------|
-| Lobby management        | Create and configure rooms, set player limits, generate permanent invites |
-| Real‑time sync          | Instant score and turn updates over Socket.io |
-| WebRTC fallback         | Maintains game state when the socket fails |
-| Spectator mode          | Viewers can watch and chat while games continue |
-| Low latency             | Optimised for up to eight concurrent players |
-| Development workflow    | Hot‑reload for client and server |
+| Feature               | Description |
+|------------------------|-------------|
+| Lobby management      | Create rooms, set player limits, generate invites |
+| Real‑time sync        | Score and turn updates over Socket.io |
+| WebRTC fallback       | Maintains state when the socket fails |
+| Spectator mode        | Watch & chat while games continue |
+| Low latency support   | Optimised for up to 8 concurrent players |
+| Hot‑reload workflow   | Client and server auto‑refresh on changes |
 
 ---
 
 ## Quick Start
 
-```bash
-git clone https://github.com/shubhyagami/game-room.git
-cd game-room
-npm ci          # Clean install dependencies
-npm run dev     # Start client & server with hot‑reload
+```text
+    git clone https://github.com/shubhyagami/game-room.git
+    cd game-room
+    npm ci
+    npm run dev
 ```
 
 Open <http://localhost:3000> in a browser, create or join a room, and start playing.
 
-> **Prerequisites** – Node.js 20 or newer (npm is bundled).
+**Prerequisites** – Node.js 20 or newer (npm is bundled).
 
 ---
 
 ## Getting Started
 
-```bash
-# Install or update dependencies
-npm ci
+```text
+    # Install dependencies
+    npm ci
 
-# Build assets (optional – used by the production server)
-npm run build
+    # Build assets for production (optional)
+    npm run build
 
-# Start the development environment
-npm run dev
+    # Start the development environment
+    npm run dev
 ```
 
-The dev command serves the React client on **3000** and starts the Express + Socket.io backend on the same port with automatic reloading. Any changes to the source tree are reflected instantly.
+`npm run dev` serves the React client on **3000** and starts an Express + Socket.io backend on the same port with automatic reloading. Any changes to the source tree are reflected instantly.
 
 ---
 
@@ -90,31 +90,31 @@ The dev command serves the React client on **3000** and starts the Express + Soc
 React (client)  <->  Express (Node.js)  <->  Socket.io / WebRTC
 ```
 
-- **Client** – React, styled with Tailwind, communicates with the server via Socket.io. On socket disconnect the client falls back to a `RTCPeerConnection` to keep receiving game state.
-- **Server** – Express handles HTTP routes and serves static assets. Socket.io manages real‑time state synchronization. The fallback logic lives on both sides.
-- **Code style** – Airbnb’s ESLint rules and Prettier keep the codebase consistent.
+- **Client** – React + Tailwind. Communicates via Socket.io; falls back to `RTCPeerConnection` on socket disconnect.  
+- **Server** – Express handles HTTP routes and serves static assets. Socket.io handles real‑time state; fallback logic lives in both client and server.  
+- **Code style** – Airbnb ESLint + Prettier enforce consistency.
 
 ---
 
 ## Development
 
-```bash
-# Install dependencies
-npm ci
+```text
+    # Install dependencies
+    npm ci
 
-# Start the development server (client + server)
-npm run dev
+    # Start dev server (client + server)
+    npm run dev
 
-# Lint the code
-npm run lint
+    # Run linter
+    npm run lint
 ```
 
 ### Environment Variables
 
-| Variable   | Description                                 | Default |
-|------------|---------------------------------------------|---------|
-| `PORT`     | Server listening port                        | `3000`  |
-| `NODE_ENV` | Runtime mode (`development` / `production`) | `development` |
+| Variable   | Description                      | Default  |
+|-----------|-----------------------------------|----------|
+| `PORT`    | Server listening port             | `3000`   |
+| `NODE_ENV`| Runtime mode (`development`/`production`) | `development` |
 
 ---
 
@@ -122,19 +122,19 @@ npm run lint
 
 The test suite uses Jest. Core game logic and API endpoints are covered by unit tests.
 
-```bash
-npm test           # Run tests once
-npm test -- --watch  # Run in watch mode
+```text
+    npm test                 # Run tests once
+    npm test -- --watch      # Run in watch mode
 ```
 
 ---
 
 ## Contributing
 
-1. Fork the repository and create a feature branch: `git checkout -b feat/<name>`.
-2. Follow the [conventional‑commit](https://www.conventionalcommits.org/) spec.
-3. Run `npm run lint` and add unit tests for any new functionality.
-4. Submit a focused pull request.
+1. Fork the repository and create a feature branch: `git checkout -b feat/<name>`.  
+2. Follow the [conventional‑commit](https://www.conventionalcommits.org/) spec.  
+3. Run `npm run lint` and add unit tests for any new functionality.  
+4. Submit a focused pull request.  
 
 Pull requests are welcome and appreciated!
 
@@ -143,9 +143,9 @@ Pull requests are welcome and appreciated!
 ## Changelog
 
 ### 0.3.0 – 2026‑08‑28
-- Added WebRTC fallback for unstable connections
-- Introduced spectator mode with chat
-- Improved lobby UI for room management
+- Added WebRTC fallback for unstable connections  
+- Introduced spectator mode with chat  
+- Improved lobby UI for room management  
 
 ---
 
@@ -157,4 +157,6 @@ MIT © [Shubhyagami](https://github.com/shubhyagami)
 
 ## Maintainers
 
-- **Shubhyagami** – [GitHub](https://github.com/shubhyagami) – @shubhyagami
+- **Shubhyagami** – <https://github.com/shubhyagami> – @shubhyagami
+
+---
